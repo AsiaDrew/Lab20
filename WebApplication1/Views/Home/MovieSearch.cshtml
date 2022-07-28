@@ -1,0 +1,26 @@
+﻿@model MovieModel
+<form method="post" asp-action="MovieSearch">
+    Search for movie: <input type="text" name="title" />
+    <input type="submit" />
+</form>
+@{
+    if (Model != null)
+    {
+    <h1 style="text-align:center">@Model.Title</h1>
+    <p style="text-align:center"><img src="@Model.Poster"/> </p> 
+
+    <p><b>@Model.Plot</b></p>
+    <p>Actors: @Model.Actors  </p>
+    <p>Director: @Model.Director  </p>
+    <p>Genre: @Model.Genre  </p>
+    <p>Type: @Model.Type  </p>
+    <p>Rated: @Model.Rated  </p>
+    <p>Released: @Model.Released  </p>
+    <p>Runtime: @Model.Runtime  </p>
+    <p>Language: @Model.Language  </p>
+    <p>Box Office: @Model.BoxOffice  </p>
+    <p>Awards: @Model.Awards  </p>
+
+
+    }
+}

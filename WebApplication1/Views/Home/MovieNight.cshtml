@@ -1,0 +1,34 @@
+﻿@model List<MovieModel>
+<form method="post" asp-action="MovieNightResults">
+    <label for="title1">First movie</label>
+    <input type="text" name="title1" id="title1"/>
+
+    <label for="title2">Second movie</label>
+    <input type="text" name="title2" id="title2" />
+
+    <label for="title3">Third movie</label>
+    <input type="text" name="title3" id="title3" />
+</form>
+
+@{
+    if (Model != null)
+    {
+        @foreach (MovieModel m in Model)
+        {
+            <h1 style="text-align:center">@m.Title</h1>
+            <p style="text-align:center"><img src="@m.Poster" /> </p>
+
+            <p><b>@m.Plot</b></p>
+            <p>Actors: @m.Actors  </p>
+            <p>Director: @m.Director  </p>
+            <p>Genre: @m.Genre  </p>
+            <p>Type: @m.Type  </p>
+            <p>Rated: @m.Rated  </p>
+            <p>Released: @m.Released  </p>
+            <p>Runtime: @m.Runtime  </p>
+            <p>Language: @m.Language  </p>
+            <p>Box Office: @m.BoxOffice  </p>
+            <p>Awards: @m.Awards  </p>
+        }
+    }
+}
